@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SymptomsGuide</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+  <source src="istockphoto-1500469735-640_adpp_is.mp4" type="video/mp4">
+</video>
+    <div class="card">
+      <div class="front">
+        <div class="card-info">
+          <h1 class="card-info-title">SymptomsGuide</h1>
+          <p class="card-info-subtitle">
+            Your trusted companion for understanding symptoms and finding the
+            right care.
+          </p>  
+           <a id="flip-to-back-button" class="btn btn-4"><span>&#8594</span></a>       
+           </div>
+        <div class="card-form-container">
+          <div class="form-wrapper">
+            <div id="search-view" class="animate-fade-in">
+              <h2 class="form-title">How are you feeling today?</h2>
+              <p class="form-subtitle">
+                Describe your symptoms to get started.
+              </p>
+              <p id="error-message" class="error-message hidden"></p>
+              <form id="search-form">
+                <input
+                  id="search-input"
+                  type="text"
+                  placeholder="Describe your symptoms (e.g., headache, fever)..."
+                  class="form-input"
+                />
+                <button id="search-button" type="submit" class="form-button">
+                  <span id="button-text">Search Symptoms</span>
+                  <svg
+                    id="spinner"
+                    class="spinner hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                </button>
+              </form>
+
+              <div class="common-symptoms">
+                <h3 class="common-symptoms-title">Common Symptoms</h3>
+                <div
+                  id="common-symptoms-container"
+                  class="common-symptoms-chips"
+                ></div>
+              </div>
+            </div>
+
+            <div id="result-view" class="result-view hidden">
+              <div class="result-header">
+                <h2 class="result-title">
+                  Information for:
+                  <span id="result-query" class="result-query-term"></span>
+                </h2>
+                <hr />
+              </div>
+
+              <div class="result-body">
+                <div id="result-content" class="result-content-text"></div>
+              </div>
+
+              <div class="result-footer">
+                <button id="reset-button" class="reset-button">
+                  Search Again
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="back-left">
+          <div id="chatbot-container">
+            <div id="chatbot-header">
+              <span>Chatbot</span>
+            </div>
+            <div id="chatbot-body">
+              <div id="chatbot-messages"></div>
+            </div>
+            <div id="chatbot-input-container">
+              <input
+                type="text"
+                id="chatbot-input"
+                placeholder="Type a message..."/>
+              <button id="send-btn">Send</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-right">
+          <div id="bmiCalculator">
+           <a id="flip-to-front-button" class="btn btn-3"><span>Click ME</span></a>
+            <h2>BMI Calculator</h2>
+            <div class="input-group">
+              <label for="weight">Weight (kg):</label>
+              <input
+                type="number"
+                id="weight"
+                placeholder="Enter your weight in kg"
+              />
+            </div>
+            <div class="input-group">
+              <label for="height">Height (cm):</label>
+              <input
+                type="number"
+                id="height"
+                placeholder="Enter your height in cm"
+              />
+            </div>
+            <button id="calculateBtn">Calculate</button>
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://aistudiocdn.com/genai/v1/google-genai.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
