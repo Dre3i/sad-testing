@@ -8,8 +8,8 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Open index.html",
-            "file": "c:\\Users\\Andre\\Desktop\\sad testing\\index.html"
+            "name": "Open Gallano.html",
+            "file": "c:\\Users\\Andre\\Desktop\\sad testing\\Gallano.html"
         }
     ]
 }
